@@ -10,43 +10,43 @@
         "id": 2,
         "name": "Luke Skywalker",
         "planet": "Tatooine",
-        "force": "Dark-side",
-        "species": "human"
+        "force": "Light-side",
+        "species": "Human"
     },
     {
         "id": 3,
         "name": "Anakin Skywalker",
         "planet": "Tatooine",
         "force": "Light-side",
-        "species": "human"
+        "species": "Human"
     },
     {
         "id": 4,
         "nom": "Darth Vader",
         "planet": "Tatooine",
         "force": "Dark-side",
-        "species": "human"
+        "species": "Human"
     },
     {
         "id": 5,
         "nom": "Leïa",
         "planet": "Tatooine",
         "force": "Light-side",
-        "species": "human"
+        "species": "Human"
     },
     {
         "id": 6,
         "name": "C3PO",
         "planet": "Tatooine",
         "force": "Light-side",
-        "species": "protocol droid"
+        "species": "Protocol droid"
     },
     {
         "id": 7,
-        "name": "Hans Solo",
+        "name": "Han Solo",
         "planet": "Corellia",
         "force": "Light-side",
-        "espèce": "human"
+        "espèce": "Human"
     },
     {
         "id": 8,
@@ -82,5 +82,26 @@
         "planet": "Stewjon",
         "force": "Light-side",
         "species": "Wookie"
-    }
+    },
+    {
+        "id": 13,
+        "name": "Jar Jar Binks",
+        "planet": "Naboo",
+        "force": "Light-side",
+        "species": "Gungan"
+    },
+    {
+        "id": 14,
+        "name": "Padme Amidala",
+        "planet": "Naboo",
+        "force": "Light-side",
+        "species": "Human"
+    },
+    {
+        "id": 15,
+        "name": "Kylo Ren",
+        "planet": "Chandrila",
+        "force": "Light-side",
+        "species": "Human"
+    }  
 ]
