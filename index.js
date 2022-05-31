@@ -25,14 +25,15 @@ app.get("/api/items/:id", (req, res) => {
 });
 
 app.post("/api/items", (req, res) => {
-    if (!req.body.title || !req.body.category || !req.body.name){
+    if (!req.body.name || !req.body.planet || !req.body.force ||!req.body.species){
         res.send("Missing fields").status(404);
     } else {
     const item = {
         id: data.length + 1,
-        title: req.body.title,
-        category: req.body.catagory,
-        name: req.body.name
+        name: req.body.name,
+        planet: req.body.planet,
+        force: req.body.force,
+        species: req.body.species
     };
     data.push(item);
     res.send ({message:"item successfully created", item: item}).status(200);
@@ -43,9 +44,10 @@ app.patch("/api/items/:id", (req, res) => {
     const id = req.params.id;
     const item = data.find(element => element.id == id);
     if(item){
-        if (req.body.title) item.title = req.body.title;
-        if (req.body.name) item.name = req.body.name;
-        if (req.body.category) item.category = req.body.category;
+        if (req.body.name) item.name= req.body.name;
+        if (req.body.planet) item.planet = req.body.planet;
+        if (req.body.force) item.force = req.body.force;
+        if (req.body.species) item.species = req.body.species;
         res.send ({message:"item successfully edited", item: item}).status(200);
 
     } else {
@@ -58,8 +60,8 @@ app.delete("/api/items/:id", (req, res) => {
     const item = data.find(element => element.id == id);
     if(item){
         data.splice(data.indexOf(item), 1);
-        res.send  ({message:"item successfully deleted", item: item}).status(200);
-    }else{
+        res.send ({message:"item successfully deleted", item: item}).status(200);
+    } else {
         res.send("Item not found").status(404);
     }      
 });
