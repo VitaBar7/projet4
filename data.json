@@ -5,16 +5,13 @@
         "planet": "Dagobah",
         "force": "Light-side",
         "species": "Unconnu"
-
     },
-
     {
         "id": 2,
         "name": "Luke Skywalker",
         "planet": "Tatooine",
         "force": "Dark-side",
         "species": "human"
-
     },
     {
         "id": 3,
@@ -22,7 +19,6 @@
         "planet": "Tatooine",
         "force": "Light-side",
         "species": "human"
-
     },
     {
         "id": 4,
@@ -30,7 +26,6 @@
         "planet": "Tatooine",
         "force": "Dark-side",
         "species": "human"
-
     },
     {
         "id": 5,
@@ -38,7 +33,6 @@
         "planet": "Tatooine",
         "force": "Light-side",
         "species": "human"
-
     },
     {
         "id": 6,
@@ -46,7 +40,6 @@
         "planet": "Tatooine",
         "force": "Light-side",
         "species": "protocol droid"
-
     },
     {
         "id": 7,
@@ -54,7 +47,6 @@
         "planet": "Corellia",
         "force": "Light-side",
         "espèce": "human"
-
     },
     {
         "id": 8,
@@ -62,7 +54,6 @@
         "planet": "Nal Hutta",
         "force": "Dark-side", 
         "species": "Hutt"
-
     },
     {
         "id": 9,
@@ -70,7 +61,6 @@
         "planet": "Naboo",
         "force": "Light-side",
         "species": "Mechanic droid"
-
     },
     {
         "id": 10,
@@ -78,7 +68,6 @@
         "planet": "Naboo",
         "force": "Dark-side",
         "species": "Sith"
-
     },
     {
         "id": 11,
@@ -86,7 +75,6 @@
         "planet": "Kashyyyk",
         "force": "Light-side",
         "species": "Wookie"
-
     },
     {
         "id": 12,
@@ -94,7 +82,5 @@
         "planet": "Stewjon",
         "force": "Light-side",
         "species": "Wookie"
-
     }
 ]
- 
