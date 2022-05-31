@@ -24,6 +24,39 @@ app.get("/api/items/:id", (req, res) => {
     else res.send("item not found").status(404);    
 });
 
+// get characters from star wars api
+app.get('/api/characters', async (req, res) => {
+    // try to get data from star wars api
+    try {
+        // fetch data from star wars api with axios and asynchrone method (await) then save response in a variable
+        const responseFromApi = await axios.get('https://swapi.dev/api/people/')
+        // send response data to client
+        res.json(responseFromApi.data).status(200);
+        //res.send(responseFromApi.data)
+        console.log(responseFromApi.data)
+    } 
+    // catch error if any
+    catch (error) {
+        console.log(error);
+    }
+});
+
+app.get('/api/planets', async (req, res) => {
+    // try to get data from star wars api
+    try {
+        // fetch data from star wars api with axios and asynchrone method (await) then save response in a variable
+        const responseFromApi = await axios.get('https://swapi.dev/api/planets/')
+        // send response data to client
+        res.json(responseFromApi.data).status(200);
+        //res.send(responseFromApi.data)
+        console.log(responseFromApi.data)
+    } 
+    // catch error if any
+    catch (error) {
+        console.log(error);
+    }
+});
+
 app.post("/api/items", (req, res) => {
     if (!req.body.name || !req.body.planet || !req.body.force ||!req.body.species){
         res.send("Missing fields").status(404);
