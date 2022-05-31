@@ -1,7 +1,99 @@
 [
     {
         "id": 1,
-        "title": "article 1"
+        "name": "Yoda",
+        "planet": "Dagobah",
+        "force": "Light-side",
+        "species": "Unconnu"
+
+    },
+
+    {
+        "id": 2,
+        "name": "Luke Skywalker",
+        "planet": "Tatooine",
+        "force": "Dark-side",
+        "species": "human"
+
+    },
+    {
+        "id": 3,
+        "name": "Anakin Skywalker",
+        "planet": "Tatooine",
+        "force": "Light-side",
+        "species": "human"
+
+    },
+    {
+        "id": 4,
+        "nom": "Darth Vader",
+        "planet": "Tatooine",
+        "force": "Dark-side",
+        "species": "human"
+
+    },
+    {
+        "id": 5,
+        "nom": "Leïa",
+        "planet": "Tatooine",
+        "force": "Light-side",
+        "species": "human"
+
+    },
+    {
+        "id": 6,
+        "name": "C3PO",
+        "planet": "Tatooine",
+        "force": "Light-side",
+        "species": "protocol droid"
+
+    },
+    {
+        "id": 7,
+        "name": "Hans Solo",
+        "planet": "Corellia",
+        "force": "Light-side",
+        "espèce": "human"
+
+    },
+    {
+        "id": 8,
+        "name": "Jabba the hutt",
+        "planet": "Nal Hutta",
+        "force": "Dark-side", 
+        "species": "Hutt"
+
+    },
+    {
+        "id": 9,
+        "name": "R2D2",
+        "planet": "Naboo",
+        "force": "Light-side",
+        "species": "Mechanic droid"
+
+    },
+    {
+        "id": 10,
+        "name": "Dark Sidious",
+        "planet": "Naboo",
+        "force": "Dark-side",
+        "species": "Sith"
+
+    },
+    {
+        "id": 11,
+        "name": "Chewbacca",
+        "planet": "Kashyyyk",
+        "force": "Light-side",
+        "species": "Wookie"
+
+    },
+    {
+        "id": 12,
+        "name": "Obi-Wan Kenobi",
+        "planet": "Stewjon",
+        "force": "Light-side",
+        "species": "Wookie"
 
     }
 ]
