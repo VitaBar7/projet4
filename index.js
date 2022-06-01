@@ -64,8 +64,18 @@ app.get('/api/characters', async (req, res) => {
         const url = "https://www.starwars-delcourt.fr/personnages.html";
         axios.get(url).then(response =>{
             JSDOM.fromURL(url).then(dom => {
-            const starwarsCards = dom.window.document.getElementById('list-personnages').querySelectorAll('item-perso');
-            starwarsCards.forEach(card => console.log(card));
+            const starwarsCards = dom.window.document.getElementById('list-personnages').querySelectorAll('li'); 
+            console.log (starwarsCards);
+            starwarsCards.forEach(profil => {
+                const object = {
+                    fiche: profil.querySelector('a').href,
+                    name: profil.querySelector('h3').textContent,
+                    img: profil.querySelector('img').src,
+                }
+                console.log(object);
+                object.push(profil);
+            });
+                res.send(object).status(200);
     })});
         
     } 
