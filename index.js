@@ -65,17 +65,19 @@ app.get('/api/characters', async (req, res) => {
         axios.get(url).then(response =>{
             JSDOM.fromURL(url).then(dom => {
             const starwarsCards = dom.window.document.getElementById('list-personnages').querySelectorAll('li'); 
-            console.log (starwarsCards);
+            //console.log (starwarsCards);
+            const items = [];
             starwarsCards.forEach(profil => {
                 const object = {
-                    fiche: profil.querySelector('a').href,
-                    name: profil.querySelector('h3').textContent,
-                    img: profil.querySelector('img').src,
+                fiche: profil.querySelector('a').href,
+                name: profil.querySelector('h3').textContent,
+                img: profil.querySelector('img').src,
                 }
+                //articles.items(profil);
                 console.log(object);
-                object.push(profil);
+                items.push(object);
             });
-                res.send(object).status(200);
+                res.send(items).status(200);
     })});
         
     } 
