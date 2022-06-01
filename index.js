@@ -2,6 +2,9 @@ const express = require('express');
 const data = require('./data.json');
 const axios = require('axios');
 const cors = require('cors');
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { response } = require('express');
 const port = 5050;
 const app = express();
 
@@ -9,6 +12,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+//Start server
 app.get("/", (req, res) => {
     res.send("hello la team!").status(200);
 });
@@ -23,7 +27,53 @@ app.get("/api/items/:id", (req, res) => {
     if(item) res.send(item).status(200);
     else res.send("item not found").status(404);    
 });
-
+// get characters from star wars api
+app.get('/api/people', async (req, res) => {
+    // try to get data from star wars api people
+    try {
+        // fetch data from star wars api with axios and asynchrone method (await) then save response in a variable
+        const responseFromApi = await axios.get('https://swapi.dev/api/people/')
+        // send response data to client
+        res.json(responseFromApi.data).status(200);
+        console.log(responseFromApi.data)
+        
+    } 
+    // catch error if any
+    catch (error) {
+        console.log(error);
+    }
+});
+app.get('/api/planets', async (req, res) => {
+    // try to get data from star wars api planet
+    try {
+        // fetch data from star wars api with axios and asynchrone method (await) then save response in a variable
+        const responseFromApi = await axios.get('https://swapi.dev/api/planets/')
+        // send response data to client
+        res.json(responseFromApi.data).status(200);
+        console.log(responseFromApi.data)
+        
+    } 
+    // catch error if any
+    catch (error) {
+        console.log(error);
+    }
+});
+// Web scraping from https://www.starwars-delcourt.fr/personnages.html
+app.get('/api/characters', async (req, res) => {
+    try {
+        const url = "https://www.starwars-delcourt.fr/personnages.html";
+        axios.get(url).then(response =>{
+            JSDOM.fromURL(url).then(dom => {
+            const starwarsCards = dom.window.document.getElementById('list-personnages').querySelectorAll('item-perso');
+            starwarsCards.forEach(card => console.log(card));
+    })});
+        
+    } 
+    // catch error if any
+    catch (error) {
+        console.log(error);
+    }
+});
 app.post("/api/items", (req, res) => {
     if (!req.body.name || !req.body.planet || !req.body.force ||!req.body.species){
         res.send("Missing fields").status(404);
