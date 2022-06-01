@@ -9,13 +9,15 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+app.use(cors("*"));
+
 app.get("/", (req, res) => {
     res.send("hello la team!").status(200);
 });
 
 app.get("/api/items", (req, res) => {
     res.send(data).status(200);
-});
+ });
 
 app.get("/api/items/:id", (req, res) => {
     const id = req.params.id;
@@ -66,6 +68,16 @@ app.delete("/api/items/:id", (req, res) => {
     }      
 });
      
+app.get("/api/people", async (req, res) =>{
+     const response = await axios.get("https://swapi.dev/api/people/");
+     res.send(response.data).status(200);
+});
+
+app.get("/api/planets", async (req, res) =>{
+    const response = await axios.get("https://swapi.dev/api/planets/");
+    res.send(response.data).status(200);
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
