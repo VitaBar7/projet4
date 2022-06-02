@@ -35,12 +35,11 @@ app.get('/api/people', async (req, res) => {
         const responseFromApi = await axios.get('https://swapi.dev/api/people/')
         // send response data to client
         res.json(responseFromApi.data).status(200);
-        console.log(responseFromApi.data)
-        
+          
     } 
     // catch error if any
     catch (error) {
-        console.log(error);
+
     }
 });
 app.get('/api/planets', async (req, res) => {
@@ -50,22 +49,20 @@ app.get('/api/planets', async (req, res) => {
         const responseFromApi = await axios.get('https://swapi.dev/api/planets/')
         // send response data to client
         res.json(responseFromApi.data).status(200);
-        console.log(responseFromApi.data)
         
-    } 
+} 
     // catch error if any
     catch (error) {
-        console.log(error);
+    
     }
 });
-// Web scraping from https://www.starwars-delcourt.fr/personnages.html
+    // Web scraping from https://www.starwars-delcourt.fr/personnages.html
 app.get('/api/characters', async (req, res) => {
     try {
         const url = "https://www.starwars-delcourt.fr/personnages.html";
         axios.get(url).then(response =>{
             JSDOM.fromURL(url).then(dom => {
             const starwarsCards = dom.window.document.getElementById('list-personnages').querySelectorAll('li'); 
-            //console.log (starwarsCards);
             const items = [];
             starwarsCards.forEach(profil => {
                 const object = {
@@ -73,8 +70,6 @@ app.get('/api/characters', async (req, res) => {
                 name: profil.querySelector('h3').textContent,
                 img: profil.querySelector('img').src,
                 }
-                //articles.items(profil);
-                console.log(object);
                 items.push(object);
             });
                 res.send(items).status(200);
@@ -83,7 +78,6 @@ app.get('/api/characters', async (req, res) => {
     } 
     // catch error if any
     catch (error) {
-        console.log(error);
     }
 });
 app.post("/api/items", (req, res) => {
